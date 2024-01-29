@@ -41,74 +41,74 @@ struct fmt
 typedef struct fmt fmt_t;
 
 int _printf(const char *format, ...);
-int handle_print(const char *fmt, int *i,
+int h_print(const char *fmt, int *i,
 va_list list, char buffer[], int flags, int width, int precision, int size);
 
 /****************** FUNCTIONS ******************/
 
 /*Header for the funtions to print characters and strings */
-int print_char(va_list types, char buffer[],
+int p_char(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
-int print_string(va_list types, char buffer[],
+int p_string(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
-int print_percent(va_list types, char buffer[],
+int p_percent(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
 /* Functions to print numbers */
-int print_int(va_list types, char buffer[],
+int p_int(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
-int print_binary(va_list types, char buffer[],
+int p_binary(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
-int print_unsigned(va_list types, char buffer[],
+int p_unsigned(va_list tps, char buffer[],
 	int flags, int width, int precision, int size);
-int print_octal(va_list types, char buffer[],
+int p_octal(va_list tps, char buffer[],
 	int flags, int width, int precision, int size);
-int print_hexadecimal(va_list types, char buffer[],
+int p_hexadecimal(va_list tps, char buffer[],
 	int flags, int width, int precision, int size);
-int print_hexa_upper(va_list types, char buffer[],
+int p_hexa_upper(va_list tps, char buffer[],
 	int flags, int width, int precision, int size);
 
-int print_hexa(va_list types, char map_to[],
+int p_hexa(va_list tps, char map_to[],
 char buffer[], int flags, char flag_ch, int width, int precision, int size);
 
 /*Header for the  function to print non printable characters */
-int print_non_printable(va_list types, char buffer[],
+int p_non_printable(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
 /*Header Function to print memory address */
-int print_pointer(va_list types, char buffer[],
+int p_pointer(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
 /*Header Functions to handle other specifiers */
-int get_flags(const char *format, int *i);
+int extract_flags(const char *format, int *i);
 int get_width(const char *format, int *i, va_list list);
-int get_precision(const char *format, int *i, va_list list);
+int get_f(const char *format, int *i, va_list list);
 int get_size(const char *format, int *i);
 
 /*Heaser for a function to print a string in reverse*/
-int print_reverse(va_list types, char buffer[],
+int p_reverse(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
 /*Function to print a string in rot 13*/
-int print_rot13string(va_list types, char buffer[],
+int p_rot13string(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
 /* width handler */
-int handle_write_char(char c, char buffer[],
-	int flags, int width, int precision, int size);
-int write_number(int is_positive, int ind, char buffer[],
-	int flags, int width, int precision, int size);
-int write_num(int ind, char bff[], int flags, int width, int precision,
+int _write_char(char e, char buffer[],
+	int f, int w, int precision, int size);
+int _number(int is_positive, int ind, char buffer[],
+	int f, int w, int precision, int size);
+int _num(int ind, char bff[], int f, int w, int precision,
 	int length, char padd, char extra_c);
-int write_pointer(char buffer[], int ind, int length,
-	int width, int flags, char padd, char extra_c, int padd_start);
+int _pointer(char buffer[], int ind, int length,
+	int w, int f, char padd, char extra_c, int padd_start);
 
-int write_unsgnd(int is_negative, int ind,
+int _unsgnd(int _negative, int ind,
 char buffer[],
-	int flags, int width, int precision, int size);
+	int f, int w, int precision, int size);
 
 /****************** UTILS ******************/
-int is_printable(char);
+int my_print(char);
 int append_hexa_code(char, char[], int);
 int is_digit(char);
 
