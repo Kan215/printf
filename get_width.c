@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * find_width -function that  Calculates the width for printing
+ * find_width -function  Calculates the width for printing
  * @format: Formatted string in which to print the arguments.
- * @i: List of arguments to be printed.
+ * @a: List of arguments to be printed.
  * @list: list of arguments.
  *
  * Return: width.

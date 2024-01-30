@@ -97,7 +97,7 @@ int p_rot13string(va_list types, char buffer[],
 int _write_char(char e, char buffer[],
 	int f, int w, int precision, int size);
 int _number(int is_positive, int ind, char buffer[],
-	int f, int , int precision, int size);
+	int f, int, int precision, int size);
 int _num(int ind, char bff[], int flags, int width, int precision,
 	int length, char padd, char extra_c);
 int _pointer(char buffer[], int ind, int length,
