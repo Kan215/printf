@@ -81,11 +81,11 @@ int print_pointer(va_list types, char buffer[],
 /*Header for  Functions to handle other specifiers */
 int get_flags(const char *format, int *i);
 int get_width(const char *format, int *i, va_list list);
-int get_precision(const char *format, int *i, va_list list);
+int get_f(const char *format, int *i, va_list list);
 int get_size(const char *format, int *i);
 
 /*Header file Function to print string in reverse*/
-int print_reverse(va_list types, char buffer[],
+int p_reverse(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
 /*Header for Function to print a string in rot 13*/
@@ -107,7 +107,7 @@ char buffer[],
 	int flags, int width, int precision, int size);
 
 /****************** UTILS HEADER FILE ******************/
-int is_printable(char);
+int my_print(char);
 int append_hexa_code(char, char[], int);
 int is_digit(char);
 
